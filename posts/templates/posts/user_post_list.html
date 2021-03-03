@@ -1,0 +1,22 @@
+<!-- display list of post of logged in user -->
+
+{% extends 'posts/post_base.html' %}
+
+{% block pre_post %}
+
+  <div class="col-md-4">
+    <h3>@{{post_user.username}}</h3>
+    <p>Post History</p>
+  </div>
+
+{% endblock %}
+
+{% block post_content %}
+
+<div class="col-md-8">
+  {% for post in post_user %}
+    {% include('posts/_post.html') %}
+  {% endfor %}
+</div>
+
+{% endblock %}
